@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <style>
+      input:focus:invalid {
+        border: 2px solid red;
+      }
+    </style>
+    <header>
+      <nav>
+        <li><a href="">Home</a></li>
+        <li><a href="">Location</a></li>
+        <li><a href="">Blog</a></li>
+      </nav>
+    </header>
+    <main>
+      <h1>Book a call</h1>
+      <form method="POST">
+        <div>
+          <label for="booking_date">Booking Date</label>
+          <input type="date" id="booking_date" name="booking_date" />
+        </div>
+        <div>
+          <br />
+          <label for="booking_people">Number of people</label>
+          <input
+            type="range"
+            id="booking_people"
+            name="booking_people"
+            min="1"
+            max="10"
+            value="4"
+            oninput="this.nextElementSibling.value = this.value"
+          />
+          <output>4</output>
+        </div>
+        <br />
+        <div>
+          <input
+            type="data"
+            id="booking_location"
+            name="booking_location"
+            list="locations"
+          />
+          <datalist id="locations">
+            <option value="Downtown"></option>
+            <option value="Uptown"></option>
+          </datalist>
+        </div>
+        <br />
+        <div>
+          <button type="submit">Book a table</button>
+        </div>
+        <br />
+      </form>
+    </main>
+    <footer><br /><br /><small>All Rights Not Reserved.</small></footer>
+  </body>
+</html>
